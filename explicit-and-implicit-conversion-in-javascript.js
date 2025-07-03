@@ -19,18 +19,34 @@ Use console.log() to clearly show the before-and-after type conversions.
 */
 
 
-// Implicit: "5" becomes number → subtraction works
-let result = "5" - 2;
-console.log("The result is: " + result); // 3
+// Task 1: Debugging 
 
-// "false" is a non-empty string → true
-let isValid = Boolean("false");
-if (isValid) {
-    console.log("This is valid!");
-}
+let result = "5" - 2; // "5" → number → 3
+console.log("The result is:", result);
 
-// Fix: convert "25" (string) to number before adding
+let isValid = Boolean("false"); // non-empty string → true
+if (isValid) console.log("This is valid!");
+
 let age = "25";
-let totalAge = Number(age) + 5;
-console.log("Total Age: " + totalAge); // 30
+let totalAge = Number(age) + 5; // convert to number before adding
+console.log("Total Age:", totalAge);
+
+// Task 2: Conversion Example
+
+let implicit = "10" * 2; // "10" → 10
+console.log("Implicit:", implicit, "| Type:", typeof implicit);
+
+let input = "123";
+console.log("Before:", input, "|", typeof input);
+let converted = Number(input);
+console.log("After:", converted, "|", typeof converted);
+
+// Edge Case: NaN
+let bad = Number("abc");
+console.log("NaN case:", bad, "| Type:", typeof bad);
+
+// Edge Case: undefined → NaN
+let notSet;
+console.log("Undefined to number:", Number(notSet));
+
 
