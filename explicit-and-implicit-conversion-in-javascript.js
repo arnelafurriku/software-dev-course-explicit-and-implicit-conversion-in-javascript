@@ -19,14 +19,18 @@ Use console.log() to clearly show the before-and-after type conversions.
 */
 
 
+// Implicit: "5" becomes number → subtraction works
 let result = "5" - 2;
-console.log("The result is: " + result);
+console.log("The result is: " + result); // 3
 
+// "false" is a non-empty string → true
 let isValid = Boolean("false");
 if (isValid) {
     console.log("This is valid!");
 }
 
+// Fix: convert "25" (string) to number before adding
 let age = "25";
-let totalAge = age + 5;
-console.log("Total Age: " + totalAge);
+let totalAge = Number(age) + 5;
+console.log("Total Age: " + totalAge); // 30
+
